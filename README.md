@@ -32,7 +32,7 @@
 ## curl 
 
 - **Sign up:** 
-`
+```
   curl --location 'http://localhost:3000/api/users/sign-up' \
   --header 'Content-Type: application/json' \
   --data-raw '{
@@ -41,10 +41,10 @@
       "firstName": true,
       "lastName": "333"
 }'
-`
+```
 - **Response:** 
 
-`
+```
   {
     "success": true,
     "result": {
@@ -55,19 +55,19 @@
         "displayName": "true 333"
     }
   }
-`
+```
 
 - **Sign in:** 
-`
+```
   curl --location 'http://localhost:3000/api/users/sign-in' \
   --header 'Content-Type: application/json' \
   --data-raw '{
       "email": "thuanton98@gmail.com",
       "password": "123323331"
   }'
-`
+```
 - **Response:** 
-`
+```
   {
     "success": true,
     "result": {
@@ -83,26 +83,26 @@
     }
   }
 
-`
+```
 - **Sign out:** 
 
-`
+```
   curl --location --request POST 'http://localhost:3000/api/users/sign-out' \
   --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJ0cnVlIiwibGFzdE5hbWUiOiIzMzMiLCJkaXNwbGF5TmFtZSI6InRydWUgMzMzIiwiZW1haWwiOiJ0aHVhbnRvbjk4QGdtYWlsLmNvbSIsImlkIjo0NjUsImlhdCI6MTY5NTg5Mjc3MSwiZXhwIjoxNjk1ODk2MzcxfQ.bIsycxZTxtD-vcoHQhBsU8WsM2wWSeLBs36AuiUugow'
-`
+```
 
 - **refresh token:** 
-`
+```
   curl --location 'http://localhost:3000/api/tokens/refresh-token' \
   --header 'Content-Type: application/json' \
   --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJ0cnVlIiwibGFzdE5hbWUiOiIzMzMiLCJkaXNwbGF5TmFtZSI6InRydWUgMzMzIiwiZW1haWwiOiJ0aHVhbnRvbjk4QGdtYWlsLmNvbSIsImlkIjo0NjUsImlhdCI6MTY5NTg5Mjc3MSwiZXhwIjoxNjk1ODk2MzcxfQ.bIsycxZTxtD-vcoHQhBsU8WsM2wWSeLBs36AuiUugow' \
   --data '{
       "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJ0cnVlIiwibGFzdE5hbWUiOiIzMzMiLCJkaXNwbGF5TmFtZSI6InRydWUgMzMzIiwiZW1haWwiOiJ0aHVhbnRvbjk4QGdtYWlsLmNvbSIsImlkIjo0NjUsImlhdCI6MTY5NTg5Mjc5NywiZXhwIjoxNjk4NDg0Nzk3fQ.6TtgGFWwzqjUmeqFWvTtm_ucIBR2sEChfOjdBa3hEpo"
   }'
-`
+```
 - **Response:** 
 
-`
+```
 {
     "success": true,
     "result": {
@@ -110,4 +110,4 @@
         "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6InVuZGVmaW5lZCB1bmRlZmluZWQiLCJpYXQiOjE2OTU4OTI4MDcsImV4cCI6MTY5NTg5NjQwN30.b22vW5bs9tE6z5cfad6StI3e1TGVzrPqLxZ1Dk4QIPs"
     }
 }
-`
+```
