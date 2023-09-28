@@ -1,0 +1,64 @@
+Arguments: 
+  /usr/local/bin/node /usr/share/yarn/bin/yarn.js lint
+
+PATH: 
+  /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  14.21.3
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/boss/Documents/test/typescript/package.json: Unexpected token } in JSON at position 341
+      at JSON.parse (<anonymous>)
+      at /usr/share/yarn/lib/cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (/usr/share/yarn/lib/cli.js:310:30)
+      at /usr/share/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "typescript",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "export NODE_ENV=development && ts-node-dev src/index.ts",
+      "knex:make": "knex migrate:make",
+      "knex:migrate": "knex migrate:latest",
+      "knex:rollback": "knex migrate:rollback",
+      "lint": "eslint . --ext .ts",
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "@types/express": "^4.17.17",
+      "@types/node": "^20.5.9",
+      "@typescript-eslint/eslint-plugin": "^6.7.3",
+      "@typescript-eslint/parser": "^6.7.3",
+      "eslint": "^8.50.0"
+    },
+    "dependencies": {
+      "@types/sequelize": "^4.28.15",
+      "axios": "^1.5.0",
+      "dotenv": "^16.3.1",
+      "express-validator": "^7.0.1",
+      "knex": "^2.5.1",
+      "mysql": "^2.18.1",
+      "pg": "^8.11.3",
+      "sequelize": "^6.32.1",
+      "ts-node-dev": "^2.0.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
