@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { NextFunction, Request, Response } from 'express'
 import { authRouter } from './api/modules/auth/router'
 import { tokenRouter } from './api/modules/token/router'
 import { NotFoundError } from './errors/not-found-error'
@@ -15,10 +15,15 @@ app.all('*', async (req, res) => {
     try {
         throw new NotFoundError()
     } catch (e: any) {
-        console.log(e, 'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee')
         return handleExceptionResponse(e.statusCode, res, e.message)
     }
 });
-
+app.use(function (err: any, req: Request, res: Response, next: NextFunction) {
+    if (err.name === "UnauthorizedError") {
+      return handleExceptionResponse(401, res, 'Not authorized')
+    } else {
+      next(err);
+    }
+});
 
 export { app }

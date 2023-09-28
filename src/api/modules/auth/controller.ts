@@ -25,7 +25,7 @@ class UserController {
 
     async signOut (req: Request, res: Response) {
         try {
-            const id = req.currentUser?.id
+            const id = req.auth?.id
             const result = await UserService.signOut(id)
             return handleReturnResponse(204, res, result)
         } catch (e: any) {

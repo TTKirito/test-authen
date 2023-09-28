@@ -2,7 +2,7 @@ import path from "path";
 import 'dotenv/config'
 
 const BASE_DB_PATH = path.join(__dirname, 'src', 'database');
-console.log(process.env.DATABASE_URL_DEV, 'hiiiiiiiiii')
+
 export default {
   development: {
     client: 'mysql',
